@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+</head>
+<body>
+<div>
+    <h1>{{ title }}</h1>
+    {% for item in humans %}
+        <h3>{{ item.name }}</h3>
+    <p>{{ item.biography }}</p>
+        <hr>
+    {% endfor %}
+
+</div>
+</body>
+</html>
