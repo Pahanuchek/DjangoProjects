@@ -37,7 +37,7 @@ class Migration(migrations.Migration):
                 ('profession', models.ForeignKey(null=True, on_delete=django.db.models.deletion.PROTECT, to='Humans.profession', verbose_name='Профессия')),
             ],
             options={
-                'verbose_name': 'Человек',
+                'verbose_name': 'Человека',
                 'verbose_name_plural': 'Люди',
                 'ordering': ['-create_at'],
             },
