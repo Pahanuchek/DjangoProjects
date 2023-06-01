@@ -6,6 +6,7 @@ class Humans(models.Model):
     create_at = models.DateTimeField(auto_now_add=True, verbose_name='Время создания записи')
     update_at = models.DateTimeField(auto_now=True, verbose_name='Время изменения записи')
     is_published = models.BooleanField(default=False, verbose_name='Публикация')
+    photo = models.ImageField(upload_to='media/%Y/%m/%d', null=True, verbose_name='Фото')
     profession = models.ForeignKey('Profession', on_delete=models.PROTECT, null=True, verbose_name='Профессия')
 
     class Meta:

@@ -2,8 +2,8 @@ from django.contrib import admin
 from .models import Humans, Profession
 
 class HumansAdmin(admin.ModelAdmin):
-    list_display = ('id', 'profession', 'name', 'biography', 'create_at', 'is_published')
-    list_display_links = ['id','name']
+    list_display = ('id', 'profession', 'name', 'biography', 'create_at', 'photo', 'is_published')
+    list_display_links = ['id', 'name']
     search_fields = ['name']
     list_filter = ('id', 'name')
     list_editable = ('profession', 'is_published')
