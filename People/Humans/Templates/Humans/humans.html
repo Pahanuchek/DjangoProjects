@@ -32,23 +32,34 @@
       <h1>{{ title }}</h1>
       <div class="row">
         <div class="col-md-12">
-
-            {% for item in humans %}
+          {% for item in humans %}
           <div class="card text-left">
-      <div class="card-header">
-        Профессия: {{ item.profession.title }}
-      </div>
-      <div class="card-body">
-        <h5 class="card-title">{{ item.name }}</h5>
-        <p class="card-text">{{ item.biography }}</p>
-        <a href="#" class="btn btn-primary">Read more...</a>
-      </div>
-      <div class="card-footer text-body-secondary">
-          {{ item.create_at|date:'Y-m-d H:i' }}
-      </div>
-      </div>
-      {% endfor %}
-
+            {{ forloop.counter }}
+            <div class="card-header">
+              {{ item.profession.title }}
+            </div>
+            <div class="media" style="display:flex">
+              <div class="media-photo">
+                {% if item.photo %}
+                <img src="{{ item.photo.url }}" class="mr-3" whidth="300" alt="Photo">
+                {% else %}
+                <h6>'Фото нет'</h6>
+                {% endif %}
+              </div>
+              <div class="media-body">
+                <div class="card-body">
+                  <h5 class="card-title {% cycle 'text-primary' 'text-danger' 'text-success' %}">{{ item.name }}</h5>
+                  {% autoescape off %}
+                  <p class="card-text">{{ item.biography|truncatewords:50|linebreaks }}</p>
+                  {% endautoescape %}
+                  <a href="#" class="btn btn-primary">Read more...</a>
+                </div>
+                <div class="card-footer text-body-secondary">
+                  {{ item.create_at|date:'Y-m-d H:i' }}
+                </div>
+              </div>
+            </div>
+          {% endfor %}
         </div>
       </div>
     </div>
