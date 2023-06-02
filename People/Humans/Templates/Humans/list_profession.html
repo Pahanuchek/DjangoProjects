@@ -1,0 +1,9 @@
+{% load new_tag %}
+
+<div class="list-group">
+  {{ arg_1 }} {{ arg_2 }}
+  {% get_list_profession as profession %}
+  {% for prof in profession %}
+    <a href="{% url 'Profession' prof.id %}" class="list-group-item list-group-item-action">{{ prof.title }}</a>
+  {% endfor %}
+</div>
