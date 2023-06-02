@@ -5,6 +5,6 @@
   {% get_list_profession as profession %}
 <!--  {% show_profession %}-->
     {% for prof in profession %}
-      <a href="{% url 'Profession' prof.id %}" class="list-group-item list-group-item-action">{{ prof.title }}</a>
+      <a href="{{ prof.get_absolute_url }}" class="list-group-item list-group-item-action">{{ prof.title }}</a>
     {% endfor %}
 </div>
