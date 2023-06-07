@@ -14,21 +14,17 @@
       <div class="card-header">
         <a href="{{ human_item.profession.get_absolute_url }}">{{ human_item.profession.title }} </a>
       </div>
-        <div class="media" style="display:flex">
-          <div class="media-photo">
+          <div class="card-body">
             {% if human_item.photo %}
-            <img src="{{ human_item.photo.url }}" class="mr-3" width="300" alt="Photo">
+            <img src="{{ human_item.photo.url }}" class="mr-3" width="820" alt="Photo">
             {% else %}
             <h6>'Фото нет'</h6>
             {% endif %}
           </div>
-          <div class="media-body">
             <h5 class="card-title {% cycle 'text-primary' 'text-danger' 'text-success' %}">{{ human_item.name }}</h5>
             {% autoescape off %}
             <p class="card-text">{{ human_item.biography|linebreaks }}</p>
             {% endautoescape %}
-          </div>
-        </div>
           <div class="card-footer text-muted">
             {{ human_item.create_at|date:'Y-m-d H:i' }}
           </div>
