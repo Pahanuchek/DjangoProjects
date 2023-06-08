@@ -16,7 +16,7 @@ class HumanPage(ListView):
         return context
 
     def get_queryset(self):
-        return Humans.objects.filter(is_published=True)
+        return Humans.objects.filter(is_published=True).select_related('profession')
 
 
 class HumansByProfession(ListView):
@@ -32,7 +32,7 @@ class HumansByProfession(ListView):
         return context
 
     def get_queryset(self):
-        return Humans.objects.filter(profession_id=self.kwargs['profession_id'], is_published=True)
+        return Humans.objects.filter(profession_id=self.kwargs['profession_id'], is_published=True).select_related('profession')
 
 
 class ViewHumans(DetailView):

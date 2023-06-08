@@ -1,10 +1,10 @@
 {% load new_tag %}
-
-<div class="list-group">
-<!--  {{ arg_1 }} {{ arg_2 }}-->
-  {% get_list_profession as profession %}
-<!--  {% show_profession %}-->
-    {% for prof in profession %}
-      <a href="{{ prof.get_absolute_url }}" class="list-group-item list-group-item-action">{{ prof.title }} <span class="badge bg-primary rounded-pill">8</span></a>
-    {% endfor %}
-</div>
+{% show_profession %}
+<!--<div class="list-group">-->
+<!--&lt;!&ndash;  {{ arg_1 }} {{ arg_2 }}&ndash;&gt;-->
+<!--&lt;!&ndash;  {% get_list_profession as profession %}&ndash;&gt;-->
+<!--&lt;!&ndash;  {% show_profession %}&ndash;&gt;-->
+<!--    {% for prof in profession %}-->
+<!--      <a href="{{ prof.get_absolute_url }}" class="list-group-item list-group-item-action">{{ prof.title }} <span class="badge bg-primary rounded-pill">8</span></a>-->
+<!--    {% endfor %}-->
+<!--</div>-->
