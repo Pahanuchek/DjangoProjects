@@ -1,0 +1,35 @@
+#container {
+    background: #FFFFE0;
+}
+#header {
+    background: black;
+}
+
+div.breadcrumbs {
+    background: #FFA500
+}
+
+div.breadcrumbs a {
+     color: black;
+}
+
+div.breadcrumbs text {
+    color: black;
+}
+
+h1 {
+    color: black;
+}
+
+.module caption{
+    text-align: center;
+    background: black;
+}
+
+tr:nth-child(odd), .row-form-errors, tr:nth-child(even) {
+    background:#FFA500;
+}
+
+a:link, a:visited {
+ color: black;
+}

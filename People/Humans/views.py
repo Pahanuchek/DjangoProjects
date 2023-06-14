@@ -2,6 +2,7 @@
 from .models import Humans, Profession
 from .forms import HumansForm
 from django.views.generic import ListView, DetailView, CreateView
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 
 class HumanPage(ListView):
@@ -44,6 +45,7 @@ class ViewHumans(DetailView):
 class AddHuman(CreateView):
     form_class = HumansForm
     template_name = 'Humans/add_humans.html'
+    login_url = '/admin/'
 
 
 # def view_humans(request, humans_id):
