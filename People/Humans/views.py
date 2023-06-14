@@ -1,4 +1,4 @@
-# from django.shortcuts import render, get_object_or_404, redirect
+from django.shortcuts import render, get_object_or_404, redirect
 from .models import Humans, Profession
 from .forms import HumansForm
 from django.views.generic import ListView, DetailView, CreateView
@@ -20,7 +20,11 @@ class HumanPage(ListView):
     def get_queryset(self):
         return Humans.objects.filter(is_published=True).select_related('profession')
 
+def register(request):
+    return render(request, 'Humans/register.html')
 
+def login(request):
+    return render(request, 'Humans/login.html')
 
 
 class HumansByProfession(ListView):
