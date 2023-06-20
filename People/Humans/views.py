@@ -24,7 +24,7 @@ class HumanPage(ListView):
 
 def register(request):
     if request.method == 'POST':
-        form = UserCreationForm()
+        form = UserCreationForm(request.POST)
         if form.is_valid:
             form.save()
             messages.success(request, 'Регистрация прошла успешно')
