@@ -22,18 +22,18 @@ class HumanPage(ListView):
     def get_queryset(self):
         return Humans.objects.filter(is_published=True).select_related('profession')
 
-def register(request):
-    if request.method == 'POST':
-        form = UserCreationForm(request.POST)
-        if form.is_valid:
-            form.save()
-            messages.success(request, 'Регистрация прошла успешно')
-            return redirect('Login')
-        else:
-            messages.error(request, 'Ошибка регистрации')
-    else:
-        form = UserCreationForm()
-    return render(request, 'Humans/register.html', {'form': form})
+# def register(request):
+#     if request.method == 'POST':
+#         form = UserCreationForm(request.POST)
+#         if form.is_valid:
+#             form.save()
+#             messages.success(request, 'Регистрация прошла успешно')
+#             return redirect('Login')
+#         else:
+#             messages.error(request, 'Ошибка регистрации')
+#     else:
+#         form = UserCreationForm()
+#     return render(request, 'Humans/register.html', {'form': form})
 
 def login(request):
     return render(request, 'Humans/login.html')

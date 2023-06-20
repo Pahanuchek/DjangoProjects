@@ -1,6 +1,6 @@
 from django.urls import path
-from .views import HumanPage, HumansByProfession, ViewHumans, AddHuman, register, login
-# from .views import humans, get_profession, view_humans, add_humans
+from .views import HumanPage, HumansByProfession, ViewHumans, AddHuman, login
+# from .views import humans, get_profession, view_humans, add_humans, register
 
 urlpatterns = [
     path('', HumanPage.as_view(), name='Home'),
@@ -8,7 +8,7 @@ urlpatterns = [
     path('humans/<int:pk>', ViewHumans.as_view(), name='View_humans'),
     path('profession/<int:profession_id>/<int:pk>', ViewHumans.as_view(), name='View_humans'),
     path('add_humans', AddHuman.as_view(), name='Add_humans'),
-    path('register', register, name='Register'),
+    # path('register', register, name='Register'),
     path('login', login, name='Login'),
 
 
