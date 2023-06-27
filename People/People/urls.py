@@ -8,7 +8,9 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('humans/', include('Humans.urls')),
     path('register/', include('Register.urls')),
-    path('login/', include('Login.urls'))
+    path('login/', include('Login.urls')),
+    path('ckeditor/', include('ckeditor_uploader.urls')),
+    path('captcha/', include('captcha.urls'))
 ]
 
 
