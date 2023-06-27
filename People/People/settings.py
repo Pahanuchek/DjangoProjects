@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'debug_toolbar',
     'Humans',
     'Register',
+    'Login',
 ]
 
 MIDDLEWARE = [

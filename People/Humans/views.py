@@ -35,8 +35,8 @@ class HumanPage(ListView):
 #         form = UserCreationForm()
 #     return render(request, 'Humans/register.html', {'form': form})
 
-def login(request):
-    return render(request, 'Humans/login.html')
+# def login(request):
+#     return render(request, 'Humans/login.html')
 
 
 class HumansByProfession(ListView):
